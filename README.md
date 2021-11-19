@@ -5,6 +5,7 @@ A minimal Bank application built with Laravel 8 and React.
 ## Requirements
 
 -   PHP ^7.3|^8.0
+-   Composer ^2.1.12
 -   Laravel ^8.65
 -   React ^17.0.2
 -   MySQL 8
@@ -13,10 +14,12 @@ A minimal Bank application built with Laravel 8 and React.
 
 ## Sailing up with docker-compose
 
+-   After cloning the project, run `composer install`
 -   Copy env.example to .env changing environment variables
--   Then run `./vendor/bin/sail up`
+-   Create the App Key running `php artisan key:generate`
+-   Then run `./vendor/bin/sail up -d`
 
-## Installation
+## Creating the database
 
 -   Run `docker-compose exec app php artisan migrate:refresh --seed` to create tables and essential data.
     -   If your are runnning without docker, then just run `php artisan migrate:refresh --seed`.
